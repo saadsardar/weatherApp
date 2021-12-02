@@ -1,9 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weatherapp/weather/weather_repository/lib/weather_repository.dart' hide Weather;
-import 'package:weatherapp/weather/weather_repository/lib/weather_repository.dart' as weather_repository;
+import 'package:weatherapp/weather/weather_repository/weather_repository.dart'
+    hide Weather;
+import 'package:weatherapp/weather/weather_repository/weather_repository.dart'
+    as weather_repository;
 
 part 'weather.g.dart';
+
 enum TemperatureUnits { fahrenheit, celsius }
 
 extension TemperatureUnitsX on TemperatureUnits {

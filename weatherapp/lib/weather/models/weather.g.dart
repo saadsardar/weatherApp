@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: implicit_dynamic_parameter
-
 part of 'weather.dart';
 
 // **************************************************************************
@@ -9,12 +7,9 @@ part of 'weather.dart';
 // **************************************************************************
 
 Temperature _$TemperatureFromJson(Map<String, dynamic> json) {
-  return $checkedNew('Temperature', json, () {
-    final val = Temperature(
-      value: $checkedConvert(json, 'value', (v) => (v as num).toDouble()),
-    );
-    return val;
-  });
+  return Temperature(
+    value: (json['value'] as num).toDouble(),
+  );
 }
 
 Map<String, dynamic> _$TemperatureToJson(Temperature instance) =>
@@ -23,25 +18,20 @@ Map<String, dynamic> _$TemperatureToJson(Temperature instance) =>
     };
 
 Weather _$WeatherFromJson(Map<String, dynamic> json) {
-  return $checkedNew('Weather', json, () {
-    final val = Weather(
-      condition: $checkedConvert(
-          json, 'condition', (v) => _$enumDecode(_$WeatherConditionEnumMap, v)),
-      lastUpdated: $checkedConvert(
-          json, 'last_updated', (v) => DateTime.parse(v as String)),
-      location: $checkedConvert(json, 'location', (v) => v as String),
-      temperature: $checkedConvert(json, 'temperature',
-          (v) => Temperature.fromJson(v as Map<String, dynamic>)),
-    );
-    return val;
-  }, fieldKeyMap: const {'lastUpdated': 'last_updated'});
+  return Weather(
+    condition: _$enumDecode(_$WeatherConditionEnumMap, json['condition']),
+    lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+    location: json['location'] as String,
+    temperature:
+        Temperature.fromJson(json['temperature'] as Map<String, dynamic>),
+  );
 }
 
 Map<String, dynamic> _$WeatherToJson(Weather instance) => <String, dynamic>{
       'condition': _$WeatherConditionEnumMap[instance.condition],
-      'last_updated': instance.lastUpdated.toIso8601String(),
+      'lastUpdated': instance.lastUpdated.toIso8601String(),
       'location': instance.location,
-      'temperature': instance.temperature.toJson(),
+      'temperature': instance.temperature,
     };
 
 K _$enumDecode<K, V>(

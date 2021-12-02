@@ -2,7 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:weatherapp/weather/models/weather.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weatherapp/weather/weather_repository/lib/weather_repository.dart' show WeatherRepository;
+import 'package:weatherapp/weather/weather_repository/weather_repository.dart'
+    show WeatherRepository;
 part 'weather_cubit.g.dart';
 part 'weather_state.dart';
 
@@ -24,7 +25,6 @@ class WeatherCubit extends HydratedCubit<WeatherState> {
       final value = units.isFahrenheit
           ? weather.temperature.value.toFahrenheit()
           : weather.temperature.value;
-
       emit(
         state.copyWith(
           status: WeatherStatus.success,

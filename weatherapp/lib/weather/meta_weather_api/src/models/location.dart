@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 part 'location.g.dart';
+
 enum LocationType {
   @JsonValue('City')
   city,
@@ -19,6 +20,7 @@ enum LocationType {
 @JsonSerializable()
 class Location {
   final String title;
+  @JsonKey(name: 'location_type')
   final LocationType locationType;
   final int woeid;
   @JsonKey(name: 'latt_long')

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/weather/weather.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weatherapp/weather/weather_repository/lib/weather_repository.dart';
+
+import 'weather/weather_repository/weather_repository.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({Key? key, required WeatherRepository weatherRepository})
@@ -15,12 +16,14 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
       value: _weatherRepository,
-      child: WeatherAppView(),
+      child: const WeatherAppView(),
     );
   }
 }
 
 class WeatherAppView extends StatelessWidget {
+  const WeatherAppView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -36,7 +39,7 @@ class WeatherAppView extends StatelessWidget {
                   .headline6,
             ),
           ),
-          home: WeatherPage(),
+          home: const WeatherPage(),
         );
       // },
     

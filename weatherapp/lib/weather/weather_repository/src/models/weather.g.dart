@@ -1,25 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'location.dart';
+part of 'weather.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Location _$LocationFromJson(Map<String, dynamic> json) {
-  return Location(
-    title: json['title'] as String,
-    locationType: _$enumDecode(_$LocationTypeEnumMap, json['locationType']),
-    latLng: const LatLngConverter().fromJson(json['latt_long'] as String),
-    woeid: json['woeid'] as int,
+Weather _$WeatherFromJson(Map<String, dynamic> json) {
+  return Weather(
+    location: json['location'] as String,
+    temperature: json['temperature'] as String,
+    condition: _$enumDecode(_$WeatherConditionEnumMap, json['condition']),
   );
 }
 
-Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
-      'title': instance.title,
-      'locationType': _$LocationTypeEnumMap[instance.locationType],
-      'woeid': instance.woeid,
-      'latt_long': const LatLngConverter().toJson(instance.latLng),
+Map<String, dynamic> _$WeatherToJson(Weather instance) => <String, dynamic>{
+      'temperature': instance.temperature,
+      'location': instance.location,
+      'condition': _$WeatherConditionEnumMap[instance.condition],
     };
 
 K _$enumDecode<K, V>(
@@ -48,11 +46,10 @@ K _$enumDecode<K, V>(
   ).key;
 }
 
-const _$LocationTypeEnumMap = {
-  LocationType.city: 'City',
-  LocationType.region: 'Region',
-  LocationType.state: 'State',
-  LocationType.province: 'Province',
-  LocationType.country: 'Country',
-  LocationType.continent: 'COntinent',
+const _$WeatherConditionEnumMap = {
+  WeatherCondition.clear: 'clear',
+  WeatherCondition.rainy: 'rainy',
+  WeatherCondition.cloudy: 'cloudy',
+  WeatherCondition.snowy: 'snowy',
+  WeatherCondition.unknown: 'unknown',
 };

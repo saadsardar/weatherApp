@@ -1,4 +1,4 @@
-export 'package:weatherapp/weather/weather_repository/lib/weather_repository.dart'
+export 'package:weatherapp/weather/weather_repository/src/models/weather.dart'
     show WeatherCondition;
 export 'cubit/weather_cubit.dart';
 export 'models/models.dart';
